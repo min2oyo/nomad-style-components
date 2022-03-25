@@ -4,18 +4,21 @@ import theme from "./theme";
 const GlobalStyle = createGlobalStyle`
   body {
     padding: 200;
-    margin: 100;
+    margin: 1000;
   }
-`
-
-const Container = styled.div`
-  height: 100vh;
-  width: 100%;
-  background-color: pink;
-`
+  `
 
 const Card = styled.div`
   background-color: red;
+`
+
+const Container = styled.div`
+height: 100vh;
+width: 100%;
+background-color: pink;
+${Card} {
+  background-color: blue;
+}
 `
 
 const Button = styled.button`
