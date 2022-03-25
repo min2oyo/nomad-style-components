@@ -1,4 +1,11 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+createGlobalStyle`
+  body {
+    padding: 0;
+    margin: 100;
+  }
+`;
 
 function App() {
   return (
@@ -6,6 +13,7 @@ function App() {
       <Container>
         <Button>Hello</Button>
         <Button danger>Hello</Button>
+        <Anchor href="http://google.com">Go to google</Anchor>
       </Container>
     </>
   );
@@ -32,8 +40,8 @@ const Button = styled.button`
   background-color: ${props => (props.danger ? "#e74c3c" : "#2ecc71")};
 `;
 
-// const Button = ({ danger }) => (
-//   <button className={danger ? "button button--danger" : "button button--success"}>Hello</button>
-// )
+const Anchor = styled(Button.withComponent("a"))`
+  text-decoration: none;
+`;
 
 export default App;
